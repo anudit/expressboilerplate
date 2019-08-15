@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var helmet = require('helmet');
+var compression = require('compression');
+var fs = require('fs');
 
 require('dotenv').config();
 
@@ -41,9 +44,33 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var server = app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + server.address().port);
+/*
+var ca = fs.readFileSync('/etc/letsencrypt/live/swap.ginete.in/fullchain.pem');
+var cert = fs.readFileSync( '/etc/letsencrypt/live/swap.ginete.in/fullchain.pem' );
+var key = fs.readFileSync( '/etc/letsencrypt/live/swap.ginete.in/privkey.pem' );
+
+var options = {
+  key: key,
+  cert: cert,
+  ca: ca
+};
+
+const spdy = require('spdy');
+spdy.createServer(options, app).listen(443);
+
+app.use(function(req, res, next) {
+  if (req.secure) {
+      next();
+  } else {
+      res.redirect('https://' + req.headers.host + req.url);
+  }
 });
+*/
+
+var http = require('http');
+http.createServer(app).listen(80);
+
+module.exports = app;
 
 
 module.exports = app;
