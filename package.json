@@ -1,9 +1,10 @@
 {
-  "name": "matictemp",
+  "name": "project",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2-runtime start ecosystem.config.js --env production &",
+	"run":"node index.js",
+    "prod": "pm2-runtime start ecosystem.config.js --env production &",
     "dev": "nodemon index.js"
   },
   "dependencies": {
