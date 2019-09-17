@@ -65,12 +65,13 @@ app.use(function(req, res, next) {
       res.redirect('https://' + req.headers.host + req.url);
   }
 });
-*/
 
 var http = require('http');
 http.createServer(app).listen(80);
+*/
 
-module.exports = app;
-
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});
 
 module.exports = app;
