@@ -1,6 +1,6 @@
 module.exports = {
     apps : [{
-      name: "matictemp",
+      name: "project",
       script: "./index.js",
       instances: "max",
       env: {
