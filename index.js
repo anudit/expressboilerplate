@@ -47,9 +47,9 @@ app.use(function(err, req, res, next) {
 });
 
 /*
-var ca = fs.readFileSync('/etc/letsencrypt/live/swap.ginete.in/fullchain.pem');
-var cert = fs.readFileSync( '/etc/letsencrypt/live/swap.ginete.in/fullchain.pem' );
-var key = fs.readFileSync( '/etc/letsencrypt/live/swap.ginete.in/privkey.pem' );
+var ca = fs.readFileSync('/etc/letsencrypt/live/sub.domain.com/fullchain.pem');
+var cert = fs.readFileSync( '/etc/letsencrypt/live/sub.domain.com/fullchain.pem' );
+var key = fs.readFileSync( '/etc/letsencrypt/live/sub.domain.com/privkey.pem' );
 
 var options = {
   key: key,
